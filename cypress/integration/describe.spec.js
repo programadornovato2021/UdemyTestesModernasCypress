@@ -1,6 +1,6 @@
 ///<reference types="cypress" />
 
-it(' A enternal test....', () =>{
+it(' A external test....', () =>{
 
 
 })
