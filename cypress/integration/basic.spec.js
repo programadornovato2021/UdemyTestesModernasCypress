@@ -15,6 +15,10 @@ describe('Cypress basics', () => {
             .should('be.equal', 'Campo de Treinamento')
             .and('contain', 'Campo')
 
+
+            //TODO imprimir o log no console
+            //TODO escrever o log em um camo de teste
+
     });
     
 });
