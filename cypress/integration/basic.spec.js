@@ -2,14 +2,14 @@
 
 describe('Cypress basics', () => {
 
-    it('Should visit a page and assert title', () => {
+    it.only('Should visit a page and assert title', () => {
         cy.visit('https://wcaquino.me/cypress/componentes.html')
         
         //const title = cy.title()
         //console.log(title)
 
         cy.title().should('be.equal', 'Campo de Treinamento')
-        cy.title().should('contain', 'Campo de Treinamento')
+        cy.title().should('contain', 'Campo')
 
         cy.title()
             .should('be.equal', 'Campo de Treinamento')
@@ -26,3 +26,6 @@ describe('Cypress basics', () => {
         cy.get('#buttonSimple').should('have.value', 'Obrigado!')
     });
 });
+
+// debug para descobrir mais informacoes no console de um elemento
+// cy.pause() para para o teste 
