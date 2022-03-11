@@ -21,4 +21,8 @@ describe('Cypress basics', () => {
 
     });
     
+    it('Should find and interact with an element', () => {
+        cy.get('#buttonSimple').click()
+        cy.get('#buttonSimple').should('have.value', 'Obrigado!')
+    });
 });
