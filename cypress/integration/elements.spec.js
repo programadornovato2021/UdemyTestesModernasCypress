@@ -73,18 +73,30 @@ describe('Work with basic elements', () => {
 
     });
 
-    it('Combo', () => {
+    it.only('Combo', () => {
         cy.get('[data-test="dataEscolaridade"]')
         .select('2o grau completo')
         .should('have.value', '2graucomp')
+
+        cy.get('[data-test="dataEscolaridade"] option')
+        .should('have.length', 8)
+        cy.get('[data-test="dataEscolaridade"] option').then($arr =>{
+            const values = []
+            $arr.each(function(){
+                values.push(this.innerHTML)
+            })
+            expect(values).to.include.members(["Superior", "Mestrado"])
+        })
         
 
-        // TODO Validar as oções do combo
+   
     });
 
-    it('Combo Multiplo', () => {
-        cy.get('[data-testid="dataEsportes"]').select(['natacao', 'Corrida', 'nada'])
+    it.only('Combo Multiplo', () => {
+        cy.get('[data-testid="dataEsportes"]')
+        .select(['natacao', 'Corrida', 'nada'])
         
+       
     });
 
     // TODO validar opçoes SELECIONADAS do combo multiplo
