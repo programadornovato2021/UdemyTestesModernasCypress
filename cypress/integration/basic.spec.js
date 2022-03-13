@@ -15,7 +15,9 @@ describe('Cypress basics', () => {
             .should('be.equal', 'Campo de Treinamento')
             .and('contain', 'Campo')
 
-
+        cy.title().then(title =>{
+            console.log(title)
+        })
             //TODO imprimir o log no console
             //TODO escrever o log em um camo de teste
 

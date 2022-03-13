@@ -41,9 +41,31 @@ describe('Esperas...', () => {
 
     });
 
-    it.only('Uso do timeout', () => {
+    it('Uso do timeout', () => {
         cy.get('#buttonDelay').click()
         cy.get('#novoCampo').should('exist')
         
+    });
+
+
+    it('retry', () => {
+        cy.get('#buttonCount')
+        .click()
+        .should('have.length', '1')
+    });
+
+    it.only('Should vs Then', () => {
+        cy.get('#buttonListDOM').click()
+        cy.get('#lista li span').then($el =>{
+            expect($el).to.have.length(1)
+            console.log($el)
+        })
+
+// fica sendo executado ao longo da espera do get
+        cy.get('#buttonListDOM').click()
+        cy.get('#lista li span').should($el =>{
+            expect($el).to.have.length(1)
+            console.log($el)
+        })
     });
 });
