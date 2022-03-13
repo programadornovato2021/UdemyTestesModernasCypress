@@ -20,4 +20,29 @@ describe('Work with alerts', () => {
              expect(msg).to.be.equal('Alert Simples')
          })
      });
+
+     it('Alert com mock', () => {
+         const stub = cy.stub().as('alerta')
+        cy.on('window:alert', stub)
+        cy.get('#alert').click().then(()=>{
+            expect(stub.getCall(0)).to.be.calledWith('Alert Simples')
+        })
+        
+    });
+    it('confirm', () => {
+        
+        cy.on('window:confirm Simples', msg =>{
+            console.log(msg)
+            expect(msg).to.be.equal('confirm Simples')
+        })
+        cy.on('window:alert', msg =>{
+            console.log(msg)
+            expect(msg).to.be.equal('Confirmado')
+        })
+
+        cy.get('#confirm').click()
+    });
+    
+
+
 })
