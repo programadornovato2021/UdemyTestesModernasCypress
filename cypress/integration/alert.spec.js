@@ -60,4 +60,6 @@ describe('Work with alerts', () => {
         cy.get('#prompt').click()
     });
 
+
+    
 })
