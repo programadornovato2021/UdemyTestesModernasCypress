@@ -25,6 +25,7 @@ describe('Helpers', () => {
         const obj = { nome: 'User', idade: 20}
         cy.wrap(obj).should('have.property', 'nome', 'User')
         cy.wrap(obj).its('nome').should('be.equal', 'User')
+        
     });
 
 });
