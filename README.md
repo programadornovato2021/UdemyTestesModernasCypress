@@ -4,8 +4,8 @@ Nesse curso estou aprendendo sobre testes funcionais, testes backend e testes fr
 
 Instalação:
 
-1- npm init - y - criar json do projeto
-2 - npm install cypress - D
+1- npm init - y - criar json do projeto br
+2 - npm install cypress - D br
 3 - npx cypress open
 
 
