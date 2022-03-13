@@ -21,6 +21,15 @@ describe('Esperas...', () => {
         cy.get('#novoCampo').type('funciona')
     });
 
+    it('Deve fazer retrys', () => {
+       
+        cy.get('#buttonDelay').click()
+        cy.get('#novoCampo')
+        .should('exist')
+        .type('funciona')
+       
+        
+    });
 
 
 });
