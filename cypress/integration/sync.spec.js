@@ -30,6 +30,15 @@ describe('Esperas...', () => {
        
         
     });
+    it.only('Uso do find', () => {
+        cy.get('#buttonList').click()
+        cy.get('#lista li')
+        .find('span')
+        .should('contain', 'Item 1')
+        
+        cy.get('#lista li span')
+        .should('contain', 'Item 2')
 
+    });
 
 });
