@@ -72,4 +72,11 @@ describe('Work with basic elements', () => {
         cy.get('#formComidaVegetariana').should('be.checked')
 
     });
+
+    it('Combo', () => {
+        cy.get('[data-test="dataEscolaridade"]')
+        .select('2o grau completo')
+        .should('have.value', '2graucomp')
+        
+    });
 });
